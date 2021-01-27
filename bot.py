@@ -67,7 +67,7 @@ def reply_to_tweets(interval: int):
 
 # Bot Timer
 if __name__ == "__main__":
-    # while True:
-    t = 60 * 60 * 6  # Every 6 hours
-    reply_to_tweets(t)
-        # time.sleep(t)
+    while True:
+        t = 60 * 60 * 6  # Every 6 hours
+        reply_to_tweets(t)
+        time.sleep(t)
