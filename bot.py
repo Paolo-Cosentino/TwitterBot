@@ -19,6 +19,7 @@ CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
 ACCESS_KEY = os.environ['ACCESS_KEY']
 ACCESS_SECRET = os.environ['ACCESS_SECRET']
 
+
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
@@ -68,6 +69,6 @@ def reply_to_tweets(interval: int):
 # Bot Timer
 if __name__ == "__main__":
     while True:
-        t = 60 * 60 * 6  # Every 6 hours
+        t = 60 * 60
         reply_to_tweets(t)
         time.sleep(t)
