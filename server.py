@@ -10,6 +10,7 @@ ma = Marshmallow(app)
 engine = create_engine('sqlite:///tweets.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
 
 class TweetSchema(ma.Schema):
@@ -28,14 +29,12 @@ tweets_schema = TweetSchema(many=True)
 
 @app.route('/', methods=['GET'])
 def home():
-    session = DBSession()
     all_tweets = session.query(Tweet)
     return tweets_schema.jsonify(all_tweets)
 
 
-@app.route('/<screen_name>/', methods=['GET'])
+@app.route('/<screen_name>', methods=['GET'])
 def get_tweets_by_screen_name(screen_name):
-    session = DBSession()
     user_tweets = session.query(Tweet) \
         .filter(func.lower(Tweet.screen_name) == screen_name.lower()).all()
     if len(user_tweets) == 0:
