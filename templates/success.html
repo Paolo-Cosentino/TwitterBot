@@ -2,14 +2,14 @@
 <head>
     <style>
         table, th, td {
+            text-align: center;
             border: 1px solid black;
-            border-collapse: collapse;
         }
     </style>
-    {% block title %}Results{% endblock %}
 </head>
+{% block title %}Results{% endblock %}
 {% block body %}
-    <table style="width:100%">
+    <table style="width:85%">
         <tr>
             <th>id</th>
             <th>tweet_id</th>
@@ -27,5 +27,4 @@
             </tr>
         {% endfor %}
     </table>
-
 {% endblock %}
