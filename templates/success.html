@@ -1,11 +1,31 @@
 {% extends "base.html" %}
 <head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
     {% block title %}Results{% endblock %}
-    <script>
-        fc =
-        {{ jsonfile|tojson|safe }}
-    </script>
 </head>
 {% block body %}
-    {{ jsonfile }}
+    <table style="width:100%">
+        <tr>
+            <th>id</th>
+            <th>tweet_id</th>
+            <th>screen_name</th>
+            <th>text</th>
+            <th>response</th>
+        </tr>
+        {% for tweet in json_data %}
+            <tr>
+                <td>{{ tweet.id }}</td>
+                <td>{{ tweet.tweet_id }}</td>
+                <td>{{ tweet.screen_name }}</td>
+                <td>{{ tweet.text }}</td>
+                <td>{{ tweet.response }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}

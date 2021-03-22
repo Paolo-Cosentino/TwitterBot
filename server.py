@@ -3,7 +3,7 @@ from flask_marshmallow import Marshmallow
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 from schema import Base, Tweet
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 app = Flask(__name__)
 ma = Marshmallow(app)
@@ -42,13 +42,19 @@ def screen_name_lookup():
 def get_tweets_by_screen_name(screen_name):
     if screen_name == '*':
         all_tweets = session.query(Tweet)
-        return tweets_schema.jsonify(all_tweets)
+        # return tweets_schema.jsonify(all_tweets)
+        return render_template('success.html', json_data=all_tweets)
     else:
         user_tweets = session.query(Tweet).filter(func.lower(Tweet.screen_name) == screen_name.lower()).all()
+        user_tweets_length = len(user_tweets)
 
-        if len(user_tweets) == 0:
+        if user_tweets_length == 0:
             return render_template('oops.html')
-        return tweets_schema.jsonify(user_tweets)
+
+        return render_template(
+            'success.html',
+            json_data=user_tweets
+        )
 
 
 app.run(host='0.0.0.0', port=os.environ.get('PORT'))
