@@ -26,22 +26,35 @@
     <div>
         <table class="center">
             <tr>
-                <th>id</th>
-                <th>tweet_id</th>
-                <th>screen_name</th>
-                <th>text</th>
-                <th>response</th>
+                <th>ID</th>
+                <th>Tweet ID</th>
+                <th>Username</th>
+                <th>Text</th>
+                <th>Bot Response</th>
             </tr>
             {% for tweet in json_data %}
                 <tr>
-                    <td>{{ tweet.id }}</td>
-                    <td>{{ tweet.tweet_id }}</td>
-                    <td>{{ tweet.screen_name }}</td>
-                    <td>{{ tweet.text }}</td>
-                    <td>{{ tweet.response }}</td>
+                    <td>
+                        {{ tweet.id }}
+                    </td>
+                    <td>
+                        <a href="https://twitter.com/{{ tweet.screen_name }}/status/{{ tweet.tweet_id }}">
+                            {{ tweet.tweet_id }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://twitter.com/{{ tweet.screen_name }}">
+                            {{ tweet.screen_name }}
+                        </a>
+                    </td>
+                    <td>
+                        {{ tweet.text }}
+                    </td>
+                    <td>
+                        {{ tweet.response }}
+                    </td>
                 </tr>
             {% endfor %}
         </table>
     </div>
-
 {% endblock %}
