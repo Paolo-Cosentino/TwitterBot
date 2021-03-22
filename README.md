@@ -12,4 +12,4 @@ West himself.
 ## Links
 
 Twitter Account -  https://twitter.com/Bot_by_Paolo   
-RESTful view - https://twitterbotbypaolo.herokuapp.com/
+Check It Out - https://twitterbotbypaolo.herokuapp.com/
