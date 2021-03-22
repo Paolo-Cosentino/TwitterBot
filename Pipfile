@@ -8,6 +8,7 @@ sqlalchemy = "*"
 flask = "*"
 tweepy = "*"
 flask-marshmallow = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
