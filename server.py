@@ -43,7 +43,7 @@ def get_tweets_by_screen_name(screen_name):
     if screen_name == '*':
         all_tweets = session.query(Tweet)
         # return tweets_schema.jsonify(all_tweets)
-        return render_template('success.html', json_data=all_tweets)
+        return render_template('success.html', json_data=all_tweets, sn='*')
     else:
         user_tweets = session.query(Tweet).filter(func.lower(Tweet.screen_name) == screen_name.lower()).all()
         user_tweets_length = len(user_tweets)
@@ -53,7 +53,8 @@ def get_tweets_by_screen_name(screen_name):
 
         return render_template(
             'success.html',
-            json_data=user_tweets
+            json_data=user_tweets,
+            sn=screen_name
         )
 
 
