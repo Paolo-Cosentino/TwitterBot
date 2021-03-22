@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}OOPS!{% endblock %}
+{% block body %}
+    <div class="main">
+        <h1>Oops, no tweets for for that username!</h1>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+{% endblock %}

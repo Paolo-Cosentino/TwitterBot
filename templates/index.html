@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}BotByPaolo{% endblock %}
+{% block body %}
+    <div class="main">
+        <div class="main-header">
+            <h1>Twitter Bot</h1>
+            <h6>by Paolo Cosentino</h6>
+        </div>
+        <hr>
+        <div class="main-links">
+            <a href="https://twitter.com/Bot_by_Paolo">🐥Twitter</a> |
+            <a href="https://github.com/Paolo-Cosentino/TwitterBot">GitHub👨🏻‍💻</a>
+        </div>
+        <hr>
+        <div class="main-description">
+            <div class="main-description-text">
+                <p>
+                    A twitter bot that replies with quotes by Kanye West when
+                    tweeted at with the hashtag "#kanye". If you've interacted with
+                    the bot, you can search your twitter username to see all the responses
+                    from @Bot_By_Paolo. If not, you can search "*" to see all responses.
+                </p>
+            </div>
+        </div>
+        <div class="main-search">
+            <form action="/" method="POST">
+                <label for="search">Username:</label>
+                <input type="text" id="search" name="screen_name" required>
+                <input type="submit" value="Search"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

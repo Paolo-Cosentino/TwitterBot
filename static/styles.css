@@ -1,0 +1,18 @@
+.main {
+    text-align: center;
+}
+
+.main-description-text {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
