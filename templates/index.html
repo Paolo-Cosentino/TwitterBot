@@ -68,7 +68,7 @@
         </div>
 
         <div class="col-lg-6">
-          <img class="title-image" src="/images/3-2-kanye-west-png-image.png" alt="kanye">
+          <img class="title-image" src="public/images/3-2-kanye-west-png-image.png" alt="kanye">
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
           <h4>{{count}}</h4>
         </div>
         <div class="col">
-          <form>
+          <form action="/" method="POST">
             <div class="form-row align-items-center">
               <h3>Search By Username</h3>
               <div class="col-auto">
@@ -93,7 +93,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">@</div>
                   </div>
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                  <input type="text" name="screen_name" class="form-control" id="inlineFormInputGroup" placeholder="Username" required>
                 </div>
               </div>
               <div class="col-auto">
@@ -108,7 +108,7 @@
         </div>
         <div class="col">
           <div class="json-container">
-            <textarea id="json-box" readonly><pre>{{ tweets }}</pre></textarea>
+            <textarea id="json-box" readonly>{{ tweets }}</textarea>
           </div>
         </div>
       </div>
