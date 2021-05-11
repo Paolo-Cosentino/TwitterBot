@@ -11,7 +11,7 @@ from schema import Base, Tweet
 engine = create_engine('sqlite:///tweets.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
+
 
 # /////////////////Twitter API/////////////////
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
@@ -26,6 +26,7 @@ api = tweepy.API(auth)
 
 # //////////////Tweet Response/////////////////
 def reply_to_tweets(interval: int):
+    session = DBSession()
     stack = LifoQueue(maxsize=0)
 
     print("Searching for new tweets...")
@@ -63,6 +64,7 @@ def reply_to_tweets(interval: int):
             '@{} {}'.format(mention.user.screen_name, kanye_reply), mention.id)
 
     print("Done responding, searching again in {} seconds...".format(interval))
+    session.close()
 
 
 # Bot Timer
