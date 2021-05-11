@@ -1,9 +1,11 @@
 import os
+import json
 from flask_marshmallow import Marshmallow
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker
 from schema import Base, Tweet
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, jsonify
+
 
 app = Flask(__name__)
 ma = Marshmallow(app)
@@ -21,7 +23,6 @@ class TweetSchema(ma.Schema):
                   'response'
                   )
 
-
 tweet_schema = TweetSchema()
 tweets_schema = TweetSchema(many=True)
 
@@ -30,20 +31,22 @@ tweets_schema = TweetSchema(many=True)
 def home():
     session = DBSession()
     all_tweets = session.query(Tweet).all()
-    # print(all_tweets)
     session.close()
-    return render_template("index.html", tweets=all_tweets, count=len(all_tweets))
+    result = tweets_schema.dump(all_tweets)
+    
+    return render_template("index.html", tweets=result, count=len(all_tweets))
 
 
 @app.route('/', methods=['POST', 'GET'])
 def screen_name_lookup():
     screen_name = request.form['screen_name'].replace(" ", "_")
-    print(screen_name)
     session = DBSession()
+
     user_tweets = session.query(Tweet).filter(
         func.lower(Tweet.screen_name) == screen_name.lower()).all()
     user_tweets_length = len(user_tweets)
     session.close()
+
     if user_tweets_length == 0:
         return jsonify(results=f'No data found for: {screen_name}')
     return tweets_schema.jsonify(user_tweets)
