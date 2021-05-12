@@ -12,7 +12,6 @@ engine = create_engine('sqlite:///tweets.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 
-
 # /////////////////Twitter API/////////////////
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 CONSUMER_SECRET = os.environ['CONSUMER_SECRET']

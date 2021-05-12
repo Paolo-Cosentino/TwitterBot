@@ -2,186 +2,189 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Bot By Paolo</title>
+    <meta charset="utf-8">
+    <title>Bot By Paolo</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="/static/styles.css">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
 
-  <!-- Font Awesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
-  <!-- Bootstrap Scripts -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <section class="colored-section" id="title">
-    <div class="container-fluid">
+    <section class="colored-section" id="title">
+        <div class="container-fluid">
 
-      <!-- Nav Bar -->
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="">Twitter Bot</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#features">RESTful</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#cta">Links</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <!-- Title -->
-      <div class="row">
-        <div class="col-lg-6">
-          <h1 class="big-heading">A Twitter bot that responds to the hashtag "#kanye".</h1>
-          <a href="https://github.com/Paolo-Cosentino/TwitterBot">
-            <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-github"></i>
-              GitHub</button>
-          </a>
-          <a href="https://twitter.com/Bot_by_Paolo">
-            <button type="button" class="btn btn-outline-light btn-lg download-button"><i class="fab fa-twitter"></i>
-              Twitter</button>
-          </a>
-        </div>
-
-        <div class="col-lg-6">
-          <img class="title-image" src="https://lh3.googleusercontent.com/proxy/A10OCBYG3mSlFBgkx1_0_s2GHLjGRky4an_LrMi4li9sShKkWYqO-KwAKezLOC3le0HOfE0BpQAq2mkdiCr71l2PaaT60BxaeFrD2fffebNc0fu0z5IpQZU2" alt="kanye">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Features -->
-  <section class="white-section" id="features">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <h3 class="display-4">Total Responses</h3>
-          <h4>{{count}}</h4>
-        </div>
-        <div class="col">
-          <form action="/" method="POST">
-            <div class="form-row align-items-center">
-              <h3>Search By Username</h3>
-              <div class="col-auto">
-                <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">@</div>
-                  </div>
-                  <input type="text" name="screen_name" class="form-control" id="inlineFormInputGroup" placeholder="Username" required>
+            <!-- Nav Bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="">Kanye Bot</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">RESTful</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cta">Links</a>
+                        </li>
+                    </ul>
                 </div>
-              </div>
-              <div class="col-auto">
-                <div class="form-check mb-2">
+            </nav>
+
+            <!-- Title -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="big-heading">Tweet "#kanye" to @Bot_By_Paolo on twitter.</h1>
+                    <a href="https://github.com/Paolo-Cosentino/TwitterBot">
+                        <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-github"></i>
+                            GitHub
+                        </button>
+                    </a>
+                    <a href="https://twitter.com/Bot_by_Paolo">
+                        <button type="button" class="btn btn-outline-light btn-lg download-button"><i
+                                class="fab fa-twitter"></i>
+                            Twitter
+                        </button>
+                    </a>
                 </div>
-              </div>
-              <div class="col-auto ">
-                <button type="submit" class="btn btn-primary mb-2">Get Tweets</button>
-              </div>
+                <div class="col-lg-6">
+                    <img class="title-image" src="https://static.thenounproject.com/png/141556-200.png" alt="kanye">
+                </div>
             </div>
-          </form>
         </div>
-        <div class="col">
-          <div class="json-container">
-            <textarea id="json-box" readonly>{{ tweets }}</textarea>
-          </div>
+    </section>
+
+
+    <!-- Features -->
+    <section class="white-section" id="features">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="feature-box col-lg-4">
+                    <h4 class="display-3">{{ count }}</h4>
+                    <h3 class="feature-title">Total Replies</h3>
+                </div>
+
+                <div class="feature-box col-lg-4">
+                    <div class="align-items-center">
+                        <h3 class="feature-title">Search Usernames</h3>
+                        <form action="/" method="POST">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">@</div>
+                                    </div>
+                                    <input type="text" name="screen_name" class="form-control" id="inlineFormInputGroup"
+                                        placeholder="Username" required>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check mb-2">
+                                </div>
+                            </div>
+                            <div class="col-auto ">
+                                <button type="submit" class="btn btn-dark mb-2">Get Tweets</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="feature-box col-lg-4">
+                    <div class="json-container">
+                        <h6 class="feature-title">JSON (All Responses)</h6>
+                        <textarea id="json-box" readonly>{{ tweets }}</textarea>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 
-  <!-- Testimonials -->
-  <section class="colored-section" id="testimonials">
-    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active container-fluid">
-          <h2 class="testimonial-text">"Tweeting is legal and also therapeutic"</h2>
-          <!-- <img class="testimonial-image" src="" alt=""> -->
-          <em>Kanye West</em>
+    <!-- Showcase -->
+    <section class="colored-section" id="testimonials">
+        <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active container-fluid">
+                    <h2 class="testimonial-text">"Tweeting is legal and also therapeutic"</h2>
+                    <!-- <img class="testimonial-image" src="" alt=""> -->
+                    <em>Kanye West</em>
+                </div>
+                <div class="carousel-item container-fluid">
+                    <h2 class="testimonial-text">"I really love my Tesla. I'm in the future. Thank you Elon."</h2>
+                    <!-- <img class="testimonial-image" src="" alt=""> -->
+                    <em>Kanye West</em>
+                </div>
+                <div class="carousel-item container-fluid">
+                    <h2 class="testimonial-text">"My greatest pain in life is that I will never be able to see myself
+                        perform
+                        live."</h2>
+                    <!-- <img class="testimonial-image" src="" alt=""> -->
+                    <em>Kanye West</em>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
-        <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">"I really love my Tesla. I'm in the future. Thank you Elon."</h2>
-          <!-- <img class="testimonial-image" src="" alt=""> -->
-          <em>Kanye West</em>
+
+    </section>
+
+
+    <!-- Call to Action -->
+    <section class="colored-section" id="cta">
+        <div class="container-fluid">
+            <h3 class="big-heading">Check it out!</h3>
+            <a href="https://github.com/Paolo-Cosentino/TwitterBot">
+                <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-github"></i>
+                    GitHub
+                </button>
+            </a>
+            <a href="https://twitter.com/Bot_by_Paolo">
+                <button type="button" class="btn btn-outline-light btn-lg download-button"><i
+                        class="fab fa-twitter"></i>
+                    Twitter
+                </button>
+            </a>
         </div>
-        <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">"My greatest pain in life is that I will never be able to see myself perform
-            live."</h2>
-          <!-- <img class="testimonial-image" src="" alt=""> -->
-          <em>Kanye West</em>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="white-section" id="footer">
+        <div class="container-fluid">
+            <i class="social-icon fab fa-twitter"></i>
+            <i class="social-icon fab fa-instagram"></i>
+            <i class="social-icon fas fa-envelope"></i>
+            <p>© Copyright 2021 Cosentino</p>
         </div>
-      </div>
-      <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
-    </div>
-
-  </section>
-
-
-  <!-- Press -->
-  <!-- <section class="colored-section" id="press">
-    <img class="press-logo" src="images/techcrunch.png" alt="tc-logo">
-    <img class="press-logo" src="images/tnw.png" alt="tnw-logo">
-    <img class="press-logo" src="images/bizinsider.png" alt="biz-insider-logo">
-    <img class="press-logo" src="images/mashable.png" alt="mashable-logo">
-  </section> -->
-  <!-- Call to Action -->
-
-  <section class="colored-section" id="cta">
-    <div class="container-fluid">
-      <h3 class="big-heading">Check out the source code on GitHub or the responses on Twitter.</h3>
-      <a href="https://github.com/Paolo-Cosentino/TwitterBot">
-        <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-github"></i>
-          GitHub</button>
-      </a>
-      <a href="https://twitter.com/Bot_by_Paolo">
-        <button type="button" class="btn btn-outline-light btn-lg download-button"><i class="fab fa-twitter"></i>
-          Twitter</button>
-      </a>
-    </div>
-  </section>
-
-
-  <!-- Footer -->
-
-  <footer class="white-section" id="footer">
-    <div class="container-fluid">
-      <i class="social-icon fab fa-twitter"></i>
-      <i class="social-icon fab fa-instagram"></i>
-      <i class="social-icon fas fa-envelope"></i>
-      <p>© Copyright 2021 Cosentino</p>
-    </div>
-  </footer>
+    </footer>
 </body>
 
 </html>
